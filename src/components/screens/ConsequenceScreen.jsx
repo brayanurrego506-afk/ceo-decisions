@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import DatoReal from '../ui/DatoReal';
+import Verdict from '../ui/Verdict';
 import './ConsequenceScreen.css';
 
 const TYPE_LABELS = {
-  epic:    { label: 'IMPACTO ÉPICO',   tone: 'epic' },
-  success: { label: 'RESULTADO POSITIVO', tone: 'success' },
-  warning: { label: 'CON RESERVAS',     tone: 'warning' },
-  neutral: { label: 'RESULTADO MIXTO',  tone: 'neutral' },
-  danger:  { label: 'CONSECUENCIA NEGATIVA', tone: 'danger' },
+  epic:    { tone: 'epic' },
+  success: { tone: 'success' },
+  warning: { tone: 'warning' },
+  neutral: { tone: 'neutral' },
+  danger:  { tone: 'danger' },
 };
 
-function FxChip({ label, value, mode }) {
+function FxChip({ label, value }) {
   if (value === 0) return null;
   const positive = value > 0;
   const sign = positive ? '+' : '';
@@ -27,8 +28,6 @@ export default function ConsequenceScreen({
   decision,
   choice,
   consequence,
-  metrics,
-  mode,
   onNext,
 }) {
   const [show, setShow] = useState(false);
@@ -41,43 +40,45 @@ export default function ConsequenceScreen({
     return () => clearTimeout(t);
   }, [decision.id, choice?.id]);
 
+  const bestOptionData = decision.options.find((o) => o.id === decision.bestOption);
+
   return (
     <div className={`consequence-screen ${show ? 'show' : ''}`} data-tone={tone.tone}>
       <div className="cs-hero" style={{ backgroundImage: `url(${decision.img})` }}>
         <div className="cs-hero-overlay" />
         <div className="cs-hero-content">
-          <div className="cs-tag-row">
-            <span className="cs-tag-badge">{tone.label}</span>
-            <span className="cs-tag-chapter">{decision.chapter} · ELEGISTE {choice.id}</span>
-          </div>
+          <div className="cs-tag-chapter">{decision.chapter} · ELEGISTE {choice.id}</div>
           <h1 className="cs-title">{consequence.title}</h1>
         </div>
       </div>
 
       <div className="cs-body">
         <div className="cs-scroll">
-          <div className="cs-choice-recap">
-            <span className="cs-choice-letter">{choice.id}</span>
-            <span className="cs-choice-emoji">{choice.emoji}</span>
-            <div className="cs-choice-text">
-              <span className="cs-choice-label">{choice.label}</span>
-              <span className="cs-choice-desc">{choice.desc}</span>
-            </div>
-          </div>
+          <Verdict
+            verdict={choice.verdict}
+            bestOption={decision.bestOption}
+            choiceId={choice.id}
+            whyBest={decision.whyBest}
+            bestLabel={bestOptionData?.label}
+          />
 
-          <p className="cs-text">{consequence.text}</p>
+          <p className="cs-text" dangerouslySetInnerHTML={{ __html: consequence.text }} />
 
           <div className="cs-fx-row">
-            <span className="cs-fx-label">IMPACTO EN MÉTRICAS:</span>
+            <span className="cs-fx-label">IMPACTO EN MÉTRICAS</span>
             <div className="cs-fx-chips">
-              <FxChip label="Capital" value={choice.fx.capital} mode={mode} />
-              <FxChip label="Competit." value={choice.fx.competitividad} mode={mode} />
-              <FxChip label="Reputación" value={choice.fx.reputacion} mode={mode} />
-              <FxChip label="Mercados" value={choice.fx.mercados} mode={mode} />
+              <FxChip label="Capital" value={choice.fx.capital} />
+              <FxChip label="Competit." value={choice.fx.competitividad} />
+              <FxChip label="Reputación" value={choice.fx.reputacion} />
+              <FxChip label="Mercados" value={choice.fx.mercados} />
             </div>
           </div>
 
-          <DatoReal dato={consequence.dato} source={consequence.source} />
+          <DatoReal
+            briefDato={consequence.briefDato}
+            dato={consequence.dato}
+            source={consequence.source}
+          />
 
           <button className="cs-next" onClick={onNext}>
             <span>{isLast ? 'VER RESULTADO FINAL' : 'SIGUIENTE DECISIÓN'}</span>

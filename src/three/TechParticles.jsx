@@ -6,7 +6,7 @@ import * as THREE from 'three';
 // Galaxy/data-center espiral — Signal/Neural/Pulse
 // Movimiento en espiral hacia el centro + bloom moderado
 
-const COUNT = 420;
+const COUNT = 720;
 
 function DataParticles() {
   const pointsRef = useRef();
@@ -47,7 +47,7 @@ function DataParticles() {
       randomness[i * 3 + 1] = ry;
       randomness[i * 3 + 2] = rz;
 
-      scales[i] = 0.4 + Math.random() * 1.2;
+      scales[i] = 0.6 + Math.random() * 1.6;
 
       // 60% Signal, 25% Neural, 15% Pulse
       const rand = Math.random();
@@ -76,7 +76,7 @@ function DataParticles() {
     () => ({
       uTime: { value: 0 },
       uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
-      uSize: { value: 28 },
+      uSize: { value: 42 },
     }),
     [],
   );
@@ -142,7 +142,7 @@ function DataParticles() {
             float alpha = smoothstep(0.5, 0.0, dist);
             float core = smoothstep(0.18, 0.0, dist);
             vec3 finalColor = vColor + core * 0.6;
-            gl_FragColor = vec4(finalColor, alpha * 0.85 * vPulse);
+            gl_FragColor = vec4(finalColor, alpha * vPulse);
           }
         `}
       />
@@ -160,7 +160,7 @@ export default function TechParticles() {
     >
       <DataParticles />
       <EffectComposer>
-        <Bloom intensity={0.55} luminanceThreshold={0.15} luminanceSmoothing={0.7} mipmapBlur />
+        <Bloom intensity={0.9} luminanceThreshold={0.08} luminanceSmoothing={0.7} mipmapBlur />
       </EffectComposer>
     </Canvas>
   );

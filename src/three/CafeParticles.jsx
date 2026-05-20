@@ -5,7 +5,7 @@ import * as THREE from 'three';
 // Vapor de café — partículas orgánicas dorado/verde/crema
 // Drift suave hacia arriba con ondulación sinusoidal (Perlin simulado)
 
-const COUNT = 220;
+const COUNT = 480;
 
 function VaporParticles() {
   const pointsRef = useRef();
@@ -35,7 +35,7 @@ function VaporParticles() {
       randomness[i * 3 + 1] = Math.random() * 2;
       randomness[i * 3 + 2] = (Math.random() - 0.5) * 2;
 
-      scales[i] = 0.4 + Math.random() * 1.2;
+      scales[i] = 0.7 + Math.random() * 1.6;
 
       // 50% dorado, 30% verde, 20% crema
       const rand = Math.random();
@@ -61,7 +61,7 @@ function VaporParticles() {
     () => ({
       uTime: { value: 0 },
       uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
-      uSize: { value: 22 },
+      uSize: { value: 36 },
     }),
     [],
   );
@@ -119,7 +119,7 @@ function VaporParticles() {
             float alpha = smoothstep(0.5, 0.0, dist);
             float core = smoothstep(0.25, 0.0, dist);
             vec3 finalColor = vColor + core * 0.35;
-            gl_FragColor = vec4(finalColor, alpha * 0.7);
+            gl_FragColor = vec4(finalColor, alpha * 0.85);
           }
         `}
       />

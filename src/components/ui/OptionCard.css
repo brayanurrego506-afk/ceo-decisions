@@ -52,6 +52,7 @@
 
 .oc-letter {
   font-family: var(--font-display);
+  font-weight: 900;
   font-size: 38px;
   color: var(--accent);
   line-height: 1;
@@ -69,6 +70,7 @@
 .oc-label {
   font-family: var(--font-display-alt);
   font-weight: 800;
+  letter-spacing: -0.003em;
   font-size: 17px;
   letter-spacing: 0.04em;
   text-transform: uppercase;

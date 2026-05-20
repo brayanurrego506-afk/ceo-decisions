@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import './SplashScreen.css';
+
+const SplashCoin = lazy(() => import('../../three/SplashCoin'));
 
 export default function SplashScreen({ onSelectMode, onOpenInstitutions }) {
   const [hovered, setHovered] = useState(null);
@@ -50,9 +52,11 @@ export default function SplashScreen({ onSelectMode, onOpenInstitutions }) {
           </div>
         </button>
 
-        {/* VS */}
-        <div className="splash-vs">
-          <div className="splash-vs-inner">VS</div>
+        {/* Moneda 3D — café/tech */}
+        <div className="splash-coin-wrap">
+          <Suspense fallback={<div className="splash-vs-inner">VS</div>}>
+            <SplashCoin hovered={!!hovered} />
+          </Suspense>
         </div>
 
         {/* TECH */}

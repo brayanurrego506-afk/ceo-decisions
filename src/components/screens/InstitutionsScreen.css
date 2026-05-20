@@ -72,7 +72,8 @@
   gap: 14px;
   padding: 18px 16px;
   font-family: var(--font-display-alt);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.005em;
   font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -117,6 +118,8 @@
 
 .inst-h1 {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: clamp(40px, 5.5vw, 84px);
   line-height: 0.9;
   letter-spacing: -0.01em;
@@ -150,6 +153,8 @@
 }
 .inst-card-num {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: 64px;
   color: var(--accent);
   line-height: 0.85;
@@ -157,6 +162,8 @@
 }
 .inst-card-name {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: clamp(28px, 3.4vw, 48px);
   line-height: 0.92;
   letter-spacing: -0.005em;
@@ -174,7 +181,8 @@
 
 .inst-card-quote {
   font-family: var(--font-display-alt);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.005em;
   font-size: 19px;
   letter-spacing: 0.02em;
   color: var(--accent);
@@ -208,6 +216,8 @@
 }
 .inst-impact-value {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: clamp(20px, 2.4vw, 34px);
   color: var(--accent);
   line-height: 0.9;
@@ -291,6 +301,8 @@
 }
 .inst-level-code {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: 64px;
   color: var(--accent);
   line-height: 0.85;
@@ -298,6 +310,8 @@
 }
 .inst-level-name {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: clamp(22px, 2.6vw, 36px);
   letter-spacing: -0.005em;
   text-transform: uppercase;
@@ -374,6 +388,8 @@
 }
 .inst-reason-num {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: 32px;
   color: var(--accent);
   line-height: 0.85;
@@ -381,6 +397,8 @@
 }
 .inst-reason h3 {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: 22px;
   letter-spacing: -0.005em;
   text-transform: uppercase;
@@ -410,6 +428,8 @@
 }
 .inst-results-title {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: clamp(28px, 3.4vw, 48px);
   letter-spacing: -0.005em;
   text-transform: uppercase;
@@ -429,6 +449,8 @@
 }
 .inst-result-value {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.022em;
   font-size: clamp(38px, 4.4vw, 60px);
   color: var(--accent);
   line-height: 0.85;

@@ -1,23 +1,23 @@
 .dato-real {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.025);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 2px;
-  padding: 20px 24px;
-  margin: 24px 0;
+  padding: 18px 22px;
+  margin: 20px 0;
 }
 
 .dr-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .dr-icon {
   color: var(--accent);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .dr-tag {
@@ -31,24 +31,72 @@
 
 .dr-text {
   font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 14px;
   line-height: 1.65;
   color: var(--text);
-  font-weight: 400;
 }
 
-.dr-source {
+.dr-text-expanded {
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px dashed var(--border);
+  font-weight: 400;
+  color: var(--text-muted);
+  animation: drExpand 0.4s var(--ease-out);
+}
+
+@keyframes drExpand {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dr-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  flex-wrap: wrap;
+}
+
+.dr-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--border-hover);
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+}
+.dr-toggle:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+.dr-toggle-arrow { font-size: 12px; }
+
+.dr-source {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
   color: var(--text-muted);
   text-transform: uppercase;
+  text-align: right;
+  flex: 1;
+  min-width: 0;
 }
 
 @media (max-width: 700px) {
-  .dato-real { padding: 14px 16px; margin: 18px 0; }
+  .dato-real { padding: 14px 16px; margin: 16px 0; }
   .dr-text { font-size: 13px; }
+  .dr-source { text-align: left; font-size: 8px; }
 }

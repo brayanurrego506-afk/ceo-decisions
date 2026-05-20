@@ -126,6 +126,8 @@
 
 .splash-title {
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.025em;
   font-size: clamp(56px, 7vw, 130px);
   line-height: 0.86;
   letter-spacing: -0.01em;
@@ -153,6 +155,7 @@
   border-radius: 0;
   font-family: var(--font-display-alt);
   font-weight: 800;
+  letter-spacing: -0.005em;
   font-size: 17px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -182,36 +185,36 @@
 }
 .splash-half:hover .splash-overlay { opacity: 0.78; }
 
-/* VS */
-.splash-vs {
+/* Moneda 3D — entre los dos splits */
+.splash-coin-wrap {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  width: 88px;
-  height: 88px;
+  width: 280px;
+  height: 280px;
   pointer-events: none;
+  filter: drop-shadow(0 0 40px rgba(0, 212, 170, 0.4))
+          drop-shadow(0 0 60px rgba(212, 135, 42, 0.35));
 }
-.splash-vs-inner {
+
+.splash-coin {
   width: 100%; height: 100%;
+}
+
+/* Fallback VS si el 3D no carga */
+.splash-vs-inner {
+  width: 88px; height: 88px;
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   display: flex; align-items: center; justify-content: center;
   background: #000;
   color: #fff;
   font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.025em;
   font-size: 28px;
-  letter-spacing: 0.06em;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  animation: pulse 2.4s ease-in-out infinite;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-}
-
-.splash[data-hovered='cafe'] .splash-vs-inner {
-  border-color: #D4872A;
-  color: #D4872A;
-}
-.splash[data-hovered='tech'] .splash-vs-inner {
-  border-color: #00D4AA;
-  color: #00D4AA;
 }
 
 /* Bottom */
@@ -263,11 +266,7 @@
   .splash-content { padding: 30px 24px; justify-content: flex-end; }
   .splash-title { font-size: clamp(42px, 11vw, 80px); }
   .splash-desc { font-size: 14px; }
-  .splash-vs {
-    top: 50%;
-    width: 64px; height: 64px;
-  }
-  .splash-vs-inner { font-size: 22px; }
+  .splash-coin-wrap { width: 180px; height: 180px; }
   .splash-top { padding: 14px 16px; }
   .splash-meta { display: none; }
   .splash-foot-link { font-size: 9px; letter-spacing: 0.16em; }

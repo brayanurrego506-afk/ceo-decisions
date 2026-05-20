@@ -1,0 +1,135 @@
+.verdict {
+  position: relative;
+  margin: 20px 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.vrd-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  font-family: var(--font-display-alt);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.vrd-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+/* Tones */
+.verdict-optima .vrd-header  {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+.verdict-buena .vrd-header   {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  color: var(--accent);
+}
+.verdict-aceptable .vrd-header {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+.verdict-riesgosa .vrd-header {
+  background: color-mix(in srgb, var(--warning) 30%, transparent);
+  color: var(--warning);
+}
+.verdict-mala .vrd-header {
+  background: color-mix(in srgb, var(--danger) 30%, transparent);
+  color: var(--danger);
+}
+
+.vrd-feedback {
+  padding: 14px 22px;
+  background: rgba(255, 255, 255, 0.025);
+  border-left: 2px solid currentColor;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* Box: qué habría sido mejor */
+.vrd-better {
+  padding: 16px 22px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px dashed var(--accent);
+  border-top: 0;
+}
+.vrd-better-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.vrd-better-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.vrd-better-option {
+  font-family: var(--font-display-alt);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--accent);
+}
+.vrd-better-text {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* Box: por qué era la mejor (validación cuando elegiste óptima) */
+.vrd-best {
+  padding: 16px 22px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border: 1px solid var(--accent);
+  border-top: 0;
+}
+.vrd-best-head {
+  margin-bottom: 10px;
+}
+.vrd-best-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.vrd-best-text {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .vrd-header { padding: 12px 16px; font-size: 12px; }
+  .vrd-feedback, .vrd-better, .vrd-best { padding: 12px 16px; }
+  .vrd-feedback { font-size: 13px; }
+  .vrd-better-text, .vrd-best-text { font-size: 13px; }
+}

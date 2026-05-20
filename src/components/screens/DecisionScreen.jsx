@@ -5,7 +5,6 @@ import './DecisionScreen.css';
 export default function DecisionScreen({ decision, step, totalSteps, onChoose }) {
   const [show, setShow] = useState(false);
 
-  // Reset animación cuando cambia decision
   useEffect(() => {
     setShow(false);
     const t = setTimeout(() => setShow(true), 60);
@@ -50,6 +49,17 @@ export default function DecisionScreen({ decision, step, totalSteps, onChoose })
             className="ds-narrative"
             dangerouslySetInnerHTML={{ __html: decision.narrative }}
           />
+
+          {decision.keyStats && decision.keyStats.length > 0 && (
+            <div className="ds-keystats">
+              {decision.keyStats.map((s, i) => (
+                <div className="ds-keystat" key={i}>
+                  <div className="ds-keystat-value">{s.value}</div>
+                  <div className="ds-keystat-label">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="ds-question">
             <span className="ds-question-mark">?</span>
