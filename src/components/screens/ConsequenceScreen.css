@@ -210,8 +210,14 @@
   margin-top: 14px;
   transition: all 0.3s var(--ease-out);
 }
-.cs-next:hover {
-  transform: translateY(-2px) translateX(4px);
+@media (hover: hover) {
+  .cs-next:hover {
+    transform: translateY(-2px) translateX(4px);
+    box-shadow: var(--shadow-accent);
+  }
+}
+.cs-next:active {
+  transform: scale(0.98);
   box-shadow: var(--shadow-accent);
 }
 .cs-next-arrow { font-size: 22px; }

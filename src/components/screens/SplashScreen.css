@@ -1,7 +1,7 @@
 .splash {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: #000;
   opacity: 0;
@@ -190,26 +190,51 @@
   width: fit-content;
 }
 
-.splash-cafe .splash-cta:hover {
-  background: #D4872A;
-  border-color: #D4872A;
-  color: #0D0400;
-  transform: translateX(4px);
-}
-.splash-tech .splash-cta:hover {
-  background: #00D4AA;
-  border-color: #00D4AA;
-  color: #060B18;
-  transform: translateX(4px);
+@media (hover: hover) {
+  .splash-cafe .splash-cta:hover {
+    background: #D4872A;
+    border-color: #D4872A;
+    color: #0D0400;
+    transform: translateX(4px);
+  }
+  .splash-tech .splash-cta:hover {
+    background: #00D4AA;
+    border-color: #00D4AA;
+    color: #060B18;
+    transform: translateX(4px);
+  }
+  .splash-half:hover .splash-bg {
+    transform: scale(1.1);
+    filter: saturate(1.2) brightness(1.05);
+  }
+  .splash-half:hover .splash-overlay { opacity: 0.78; }
 }
 
 .splash-cta-arrow { font-size: 22px; }
 
-.splash-half:hover .splash-bg {
-  transform: scale(1.1);
-  filter: saturate(1.2) brightness(1.05);
+/* En touch: active state cuando tocan el split */
+.splash-half:active .splash-bg {
+  transform: scale(1.05);
+  filter: saturate(1.15) brightness(1.0);
 }
-.splash-half:hover .splash-overlay { opacity: 0.78; }
+.splash-cafe .splash-cta:active,
+.splash-tech .splash-cta:active {
+  transform: scale(0.98);
+}
+
+/* En mobile: el CTA por default ya es visible (no oculto) */
+@media (hover: none) {
+  .splash-cafe .splash-cta {
+    background: rgba(212, 135, 42, 0.85);
+    border-color: #D4872A;
+    color: #0D0400;
+  }
+  .splash-tech .splash-cta {
+    background: rgba(0, 212, 170, 0.85);
+    border-color: #00D4AA;
+    color: #060B18;
+  }
+}
 
 /* Divider — bifurcación de decisiones */
 .splash-divider {
@@ -349,11 +374,17 @@
   text-transform: uppercase;
   background: transparent;
   border: 0;
-  padding: 4px 8px;
+  padding: 10px 16px;
+  min-height: 40px;
   cursor: pointer;
   transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
 }
-.splash-foot-link:hover { color: #00D4AA; }
+@media (hover: hover) {
+  .splash-foot-link:hover { color: #00D4AA; }
+}
+.splash-foot-link:active { color: #00D4AA; }
 
 /* Mobile */
 @media (max-width: 768px) {

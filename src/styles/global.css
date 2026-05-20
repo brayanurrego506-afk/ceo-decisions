@@ -12,6 +12,23 @@ html, body, #root {
   height: 100%;
   overflow: hidden;
   background: var(--bg-primary);
+  /* Safe areas para notch iOS */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* iOS body lock — evita scroll de rebote */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+button, a {
+  /* Eliminar tap highlight default de mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* Touch target mínimo aceptable */
+  min-height: 44px;
 }
 
 body {
@@ -62,7 +79,7 @@ input {
 #root {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 }
 
 /* Three.js canvas — siempre detrás de todo */
@@ -70,7 +87,7 @@ input {
   position: fixed !important;
   inset: 0;
   width: 100vw !important;
-  height: 100vh !important;
+  height: 100dvh !important;
   z-index: var(--z-particles);
   pointer-events: none;
 }
@@ -158,4 +175,18 @@ input {
 /* Mobile responsive base */
 @media (max-width: 768px) {
   html, body { font-size: 14px; }
+}
+
+/* Hover effects: SOLO en devices que SOPORTAN hover (no touch) */
+@media (hover: none) {
+  /* En mobile/touch: convertir hover a active visual state */
+  *:hover { transition-duration: 0s; }
+}
+
+/* Reducir animaciones para usuarios con preferencia */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

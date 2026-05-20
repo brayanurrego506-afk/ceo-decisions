@@ -36,7 +36,7 @@ export default function SplashScreen({ onSelectMode, onOpenInstitutions }) {
         >
           <div
             className="splash-bg"
-            style={{ backgroundImage: 'url(/images/entrepreneur.jpg)' }}
+            style={{ backgroundImage: 'url(/images/entrepreneur.webp)' }}
           />
           <div className="splash-overlay splash-overlay-cafe" />
           <div className="splash-content">
@@ -74,7 +74,7 @@ export default function SplashScreen({ onSelectMode, onOpenInstitutions }) {
         >
           <div
             className="splash-bg"
-            style={{ backgroundImage: 'url(/images/datacenter.jpg)' }}
+            style={{ backgroundImage: 'url(/images/datacenter.webp)' }}
           />
           <div className="splash-overlay splash-overlay-tech" />
           <div className="splash-content">

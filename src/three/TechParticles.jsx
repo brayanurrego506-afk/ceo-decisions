@@ -6,7 +6,9 @@ import * as THREE from 'three';
 // Galaxy/data-center espiral — Signal/Neural/Pulse
 // Movimiento en espiral hacia el centro + bloom moderado
 
-const COUNT = 720;
+// Detección mobile-first: bajar partículas para preservar FPS en celulares
+const IS_MOBILE = typeof window !== 'undefined' && window.innerWidth < 768;
+const COUNT = IS_MOBILE ? 340 : 720;
 
 function DataParticles() {
   const pointsRef = useRef();
@@ -159,9 +161,11 @@ export default function TechParticles() {
       dpr={[1, 2]}
     >
       <DataParticles />
-      <EffectComposer>
-        <Bloom intensity={0.9} luminanceThreshold={0.08} luminanceSmoothing={0.7} mipmapBlur />
-      </EffectComposer>
+      {!IS_MOBILE && (
+        <EffectComposer>
+          <Bloom intensity={0.9} luminanceThreshold={0.08} luminanceSmoothing={0.7} mipmapBlur />
+        </EffectComposer>
+      )}
     </Canvas>
   );
 }

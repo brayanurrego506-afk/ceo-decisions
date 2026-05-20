@@ -40,15 +40,31 @@
   pointer-events: none;
 }
 
-.option-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: var(--border-hover);
-  border-left-color: var(--accent);
-  transform: translateX(6px);
+@media (hover: hover) {
+  .option-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--border-hover);
+    border-left-color: var(--accent);
+    transform: translateX(6px);
+  }
+  .option-card:hover::after { left: 100%; }
 }
-.option-card:hover::after { left: 100%; }
 
-.option-card:active { transform: translateX(2px); }
+/* En touch: el active state es lo que importa */
+.option-card:active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  border-left-color: var(--accent);
+  transform: translateX(3px) scale(0.99);
+}
+
+/* Indicador visual permanente en mobile para que se vea "tappable" */
+@media (hover: none) {
+  .option-card {
+    border-left-color: var(--accent);
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
 
 .oc-letter {
   font-family: var(--font-display);
@@ -92,9 +108,15 @@
   color: var(--text-muted);
   transition: color 0.3s, transform 0.3s;
 }
-.option-card:hover .oc-arrow {
+@media (hover: hover) {
+  .option-card:hover .oc-arrow {
+    color: var(--accent);
+    transform: translateX(6px);
+  }
+}
+.option-card:active .oc-arrow {
   color: var(--accent);
-  transform: translateX(6px);
+  transform: translateX(3px);
 }
 
 @media (max-width: 700px) {

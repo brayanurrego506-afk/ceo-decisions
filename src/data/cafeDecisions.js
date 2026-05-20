@@ -7,7 +7,7 @@
 export const CAFE_DECISIONS = [
   {
     id: 1,
-    img: '/images/entrepreneur.jpg',
+    img: '/images/entrepreneur.webp',
     chapter: 'CAPÍTULO 1',
     title: 'EL EXPERTO LLEGA A LA FINCA',
     narrative: `Eres dueño de una finca cafetera en Antioquia con 6 trabajadores y producción de 1,200 kg al mes. Recibes un correo de <strong>iNNpulsa Colombia</strong>: dentro del programa <strong>Fábricas de Productividad</strong> te ofrecen 60 horas de un experto alemán <strong>completamente gratis</strong>. El experto dice que para implementar los cambios necesita parar tu producción 3 semanas. En ese tiempo dejarías de cumplir contratos por <strong>COP 14 millones</strong>. A cambio, el DANE demuestra que empresas que pasan por el programa reducen costos hasta un <strong>21%</strong>.`,
@@ -66,7 +66,7 @@ export const CAFE_DECISIONS = [
   },
   {
     id: 2,
-    img: '/images/reunion.jpg',
+    img: '/images/reunion.webp',
     chapter: 'CAPÍTULO 2',
     title: 'LA MACRORRUEDA EN MADRID',
     narrative: `<strong>ProColombia</strong> te seleccionó entre 130 exportadores colombianos para asistir a la <strong>Macrorrueda de Negocios en Madrid</strong>. Allá, después de tres días de citas con compradores europeos, un importador alemán de Berlín te hace una oferta: quiere comprarte <strong>5,000 kg de café al mes</strong> durante un año. El problema: tú solo produces 1,200 kg. Para cumplir necesitarías un crédito bancario de <strong>COP 80 millones</strong> con tu finca como garantía — la misma que heredaste de tu familia hace 40 años. Si el alemán cancela el contrato en 6 meses, pierdes la finca.`,
@@ -125,7 +125,7 @@ export const CAFE_DECISIONS = [
   },
   {
     id: 3,
-    img: '/images/taza.jpg',
+    img: '/images/taza.webp',
     chapter: 'CAPÍTULO 3',
     title: 'EL GIGANTE LLAMA A TU PUERTA',
     narrative: `Una multinacional cafetera global te contacta directamente. Quiere comprar <strong>toda tu producción mensual</strong> durante 2 años a precio premium. La condición innegociable: quitan tu marca y ponen la suya. Tú produces, ellos venden bajo su etiqueta. Es dinero seguro y estable. ProColombia te plantea la alternativa: en vez de aceptar, construir <strong>tu propia ruta de exportación con tu marca</strong> en 18–24 meses. Mucha más incertidumbre, pero el café con marca propia se vende hasta <strong>40% más caro</strong> en Europa.`,
@@ -184,7 +184,7 @@ export const CAFE_DECISIONS = [
   },
   {
     id: 4,
-    img: '/images/taza.jpg',
+    img: '/images/taza.webp',
     chapter: 'CAPÍTULO 4',
     title: 'CERTIFICACIÓN O NÓMINA',
     narrative: `<strong>Colombia Productiva</strong> abrió una convocatoria que cofinancia tu certificación <strong>Rainforest Alliance</strong> — el sello indispensable para entrar a Carrefour, Aldi y Lidl en Europa. Ellos pagan el 60%, tú pones <strong>COP 4.8 millones</strong>. La fecha límite es esta semana. Problema: ese mismo viernes vence la nómina de tus 6 trabajadores y tienes <strong>COP 6 millones</strong> en caja. Si pagas la certificación, no te alcanza para pagar nómina completa. Si pagas nómina, pierdes la convocatoria y tienes que esperar 12 meses para la siguiente.`,
@@ -243,7 +243,7 @@ export const CAFE_DECISIONS = [
   },
   {
     id: 5,
-    img: '/images/puerto.jpg',
+    img: '/images/puerto.webp',
     chapter: 'CAPÍTULO 5',
     title: 'LA ALIANZA INCÓMODA',
     narrative: `Última decisión. Tu comprador alemán quiere ahora <strong>5,000 kg al mes</strong>. Gracias a Fábricas de Productividad creciste y produces 1,800 kg — un buen progreso, pero no alcanza. Un caficultor del Huila te propone unir producción: juntos llegan a los 5,000. Problema serio: <strong>su calidad es inconsistente</strong> y todavía no tiene certificación Rainforest Alliance. Si el lote llega con defectos, ambos pierden el cliente y la reputación. Si rechazas la alianza, incumples el volumen prometido.`,

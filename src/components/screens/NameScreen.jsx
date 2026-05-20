@@ -17,7 +17,7 @@ export default function NameScreen({ mode, onConfirm }) {
     onConfirm(trimmed.toUpperCase().slice(0, 24));
   };
 
-  const bgImg = mode === 'cafe' ? '/images/entrepreneur.jpg' : '/images/codigo.jpg';
+  const bgImg = mode === 'cafe' ? '/images/entrepreneur.webp' : '/images/codigo.webp';
 
   return (
     <div className="name-screen">

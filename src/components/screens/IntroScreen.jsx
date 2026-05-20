@@ -3,7 +3,7 @@ import './IntroScreen.css';
 
 const COPY = {
   cafe: {
-    img: '/images/entrepreneur.jpg',
+    img: '/images/entrepreneur.webp',
     role: 'CEO · FINCA CAFETERA',
     location: 'ANTIOQUIA · COLOMBIA',
     intro:
@@ -17,7 +17,7 @@ const COPY = {
     cta: 'COMENZAR EL JUEGO',
   },
   tech: {
-    img: '/images/codigo.jpg',
+    img: '/images/codigo.webp',
     role: 'CEO · STARTUP DE DATOS',
     location: 'MEDELLÍN · COLOMBIA',
     intro:

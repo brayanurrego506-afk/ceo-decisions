@@ -1,7 +1,7 @@
 .ending-screen {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: var(--bg-primary);
   animation: fadeIn 0.8s var(--ease-out);
@@ -254,11 +254,18 @@
   cursor: pointer;
   transition: all 0.3s var(--ease-out);
 }
-.es-restart:hover {
+@media (hover: hover) {
+  .es-restart:hover {
+    background: var(--accent);
+    color: var(--text-on-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+  }
+}
+.es-restart:active {
   background: var(--accent);
   color: var(--text-on-accent);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-accent);
+  transform: scale(0.97);
 }
 .es-restart-icon { font-size: 18px; }
 
@@ -287,8 +294,14 @@
   cursor: pointer;
   transition: all 0.3s var(--ease-out);
 }
-.es-learn:hover {
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .es-learn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+  }
+}
+.es-learn:active {
+  transform: scale(0.97);
   box-shadow: var(--shadow-accent);
 }
 

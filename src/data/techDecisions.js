@@ -7,7 +7,7 @@
 export const TECH_DECISIONS = [
   {
     id: 1,
-    img: '/images/dashboard.jpg',
+    img: '/images/dashboard.webp',
     chapter: 'CAPÍTULO 1',
     title: 'EL INVERSIONISTA QUE CAMBIA TODO',
     narrative: `Llevas 18 meses construyendo una startup en Medellín que ayuda a tiendas de retail a predecir sus ventas con inteligencia artificial. Tienes <strong>12 clientes fieles</strong> y un MRR (ingresos mensuales recurrentes) de <strong>USD 2,400</strong> — apenas para pagar sueldos. Un inversionista ángel que conociste en el <strong>Colombia Investment Summit de ProColombia</strong> te ofrece <strong>USD 150,000</strong>. Condición: tienes que pivotar el producto hacia logística de última milla, un mercado que crece 23% anual. Tu equipo lleva año y medio creyendo en retail. Tienes 72 horas para decidir.`,
@@ -66,7 +66,7 @@ export const TECH_DECISIONS = [
   },
   {
     id: 2,
-    img: '/images/codigo.jpg',
+    img: '/images/codigo.webp',
     chapter: 'CAPÍTULO 2',
     title: 'LANZAR O PATENTAR',
     narrative: `Tu equipo desarrolló un algoritmo de IA que predice ventas en retail con 94% de precisión — es el único de su tipo en Latinoamérica. <strong>ProColombia</strong> te llevó a una misión comercial y compradores de <strong>México, Chile y Perú</strong> quieren firmar contratos de USD 20K/mes cada uno, pero te dieron solo 60 días para entregar. Problema: un abogado de propiedad intelectual te advierte que sin patente, cualquier competidor puede copiarte el código en 4 meses. Patentar cuesta <strong>COP 12 millones</strong> y toma <strong>3 meses</strong> — tiempo que los compradores no van a esperar.`,
@@ -125,7 +125,7 @@ export const TECH_DECISIONS = [
   },
   {
     id: 3,
-    img: '/images/ceo_desk.jpg',
+    img: '/images/ceo_desk.webp',
     chapter: 'CAPÍTULO 3',
     title: 'EL CONTRATO DEL GOBIERNO',
     narrative: `El <strong>Ministerio de Tecnologías (MinTIC)</strong> quiere implementar tu software en <strong>800 municipios colombianos</strong>. El contrato sería de <strong>COP 800 millones</strong> — el más grande que has imaginado. Problema: la contratación pública en Colombia toma en promedio <strong>8 meses</strong> entre el anuncio y el primer pago. Tú solo tienes caja para 4 meses. iNNpulsa ofrece una línea de financiamiento puente para startups en procesos estatales, pero a cambio te pide <strong>8% de equity</strong> de la empresa. Alternativa: rechazar y buscar un cliente privado grande en 30 días.`,
@@ -184,7 +184,7 @@ export const TECH_DECISIONS = [
   },
   {
     id: 4,
-    img: '/images/datacenter.jpg',
+    img: '/images/datacenter.webp',
     chapter: 'CAPÍTULO 4',
     title: 'LA OFERTA DE SILICON VALLEY',
     narrative: `Un scout de una startup de San Francisco te llama directamente: quieren comprarte por <strong>USD 500,000</strong>. Llevas 2 años y 7 meses construyendo. La oferta es una salida digna y rápida. Al mismo tiempo, <strong>iNNpulsa</strong> te seleccionó para su programa de aceleración premium con mentores internacionales y proyección de <strong>USD 3 millones</strong> en 18 meses. Dato incómodo: el <strong>70% de startups</strong> que rechazan exits de este tamaño no terminan alcanzando el potencial proyectado.`,
@@ -243,7 +243,7 @@ export const TECH_DECISIONS = [
   },
   {
     id: 5,
-    img: '/images/codigo.jpg',
+    img: '/images/codigo.webp',
     chapter: 'CAPÍTULO 5',
     title: 'EL EQUIPO VS LA VELOCIDAD',
     narrative: `Tu CTO (jefe técnico) acaba de renunciar — era el cerebro de toda la arquitectura. Para empeorar la situación, <strong>un competidor acaba de lanzar algo similar a tu producto</strong> y la ventana de mercado se está cerrando. Tienes tres caminos: contratar <strong>3 desarrolladores junior</strong> disponibles en 2 semanas (velocidad pero calidad incierta), esperar <strong>2 meses</strong> por <strong>1 senior de 8 años</strong> de experiencia (calidad alta, pero pierdes momentum) o usar el programa de <strong>Transformación Digital de iNNpulsa</strong> que ofrece mentores técnicos GRATIS pero tarda 6 semanas en activarse.`,

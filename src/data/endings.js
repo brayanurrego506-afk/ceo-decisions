@@ -6,7 +6,7 @@ export const ENDINGS = {
     legend: {
       key: 'legend',
       tier: 'EPIC',
-      img: '/images/puerto.jpg',
+      img: '/images/puerto.webp',
       title: 'LEYENDA DEL CAFÉ',
       subtitle: 'COP $$$ · 4 MERCADOS · CALIDAD MÁXIMA',
       headline: 'Construiste un legado que durará generaciones.',
@@ -17,7 +17,7 @@ export const ENDINGS = {
     growth: {
       key: 'growth',
       tier: 'SUCCESS',
-      img: '/images/entrepreneur.jpg',
+      img: '/images/entrepreneur.webp',
       title: 'EXPORTADOR EN CRECIMIENTO',
       subtitle: 'EUROPA · MARCA PROPIA · BASE SÓLIDA',
       headline: 'Cruzaste la frontera. Ahora todo es cuesta arriba.',
@@ -28,7 +28,7 @@ export const ENDINGS = {
     survivor: {
       key: 'survivor',
       tier: 'WARNING',
-      img: '/images/taza.jpg',
+      img: '/images/taza.webp',
       title: 'EL TINTO SOBREVIVIÓ',
       subtitle: 'CAPITAL PRESERVADO · MERCADO LOCAL',
       headline: 'No perdiste. Pero tampoco volaste.',
@@ -39,7 +39,7 @@ export const ENDINGS = {
     bankrupt: {
       key: 'bankrupt',
       tier: 'DANGER',
-      img: '/images/entrepreneur.jpg',
+      img: '/images/entrepreneur.webp',
       title: 'LA FINCA QUEBRÓ',
       subtitle: 'CAPITAL: COP 0 · LUCES APAGADAS',
       headline: 'El café ya no se cosecha aquí.',
@@ -52,7 +52,7 @@ export const ENDINGS = {
     legend: {
       key: 'legend',
       tier: 'EPIC',
-      img: '/images/datacenter.jpg',
+      img: '/images/datacenter.webp',
       title: 'UNICORNIO COLOMBIANO',
       subtitle: 'USD $$$ · 3+ MERCADOS · ROUND CLOSED',
       headline: 'De Medellín al mundo. Sin pedir permiso.',
@@ -63,7 +63,7 @@ export const ENDINGS = {
     growth: {
       key: 'growth',
       tier: 'SUCCESS',
-      img: '/images/ceo_desk.jpg',
+      img: '/images/ceo_desk.webp',
       title: 'STARTUP EN ÓRBITA',
       subtitle: 'CLIENTES INTERNACIONALES · ROUND ABIERTA',
       headline: 'Saliste de Colombia. Ahora a escalar.',
@@ -74,7 +74,7 @@ export const ENDINGS = {
     survivor: {
       key: 'survivor',
       tier: 'WARNING',
-      img: '/images/codigo.jpg',
+      img: '/images/codigo.webp',
       title: 'SUPERVIVENCIA DIGITAL',
       subtitle: 'RUNWAY: ESTABLE · MERCADO: LOCAL',
       headline: 'Sigues vivo. Pero el reloj sigue corriendo.',
@@ -85,7 +85,7 @@ export const ENDINGS = {
     bankrupt: {
       key: 'bankrupt',
       tier: 'DANGER',
-      img: '/images/datacenter.jpg',
+      img: '/images/datacenter.webp',
       title: 'SERVIDOR APAGADO',
       subtitle: 'STATUS: OFFLINE · DOMAIN: EXPIRED',
       headline: 'La empresa cerró. La idea se quedó en GitHub.',

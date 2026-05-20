@@ -2,7 +2,7 @@
   position: relative;
   z-index: 4;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background: var(--bg-primary);
   display: flex;
   flex-direction: column;
@@ -28,7 +28,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 12px;
+  padding: 10px 16px;
+  min-height: 40px;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -39,9 +40,16 @@
   background: transparent;
   transition: all 0.3s var(--ease-out);
 }
-.inst-back:hover {
+@media (hover: hover) {
+  .inst-back:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+}
+.inst-back:active {
   color: var(--accent);
   border-color: var(--accent);
+  transform: scale(0.97);
 }
 
 .inst-meta {
@@ -506,8 +514,14 @@
   cursor: pointer;
   transition: all 0.3s var(--ease-out);
 }
-.inst-continue:hover {
-  transform: translateX(4px);
+@media (hover: hover) {
+  .inst-continue:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-accent);
+  }
+}
+.inst-continue:active {
+  transform: scale(0.97);
   box-shadow: var(--shadow-accent);
 }
 

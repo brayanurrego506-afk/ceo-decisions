@@ -5,7 +5,9 @@ import * as THREE from 'three';
 // Vapor de café — partículas orgánicas dorado/verde/crema
 // Drift suave hacia arriba con ondulación sinusoidal (Perlin simulado)
 
-const COUNT = 480;
+// Detección mobile-first: bajar partículas para preservar FPS en celulares
+const IS_MOBILE = typeof window !== 'undefined' && window.innerWidth < 768;
+const COUNT = IS_MOBILE ? 220 : 480;
 
 function VaporParticles() {
   const pointsRef = useRef();

@@ -1,7 +1,7 @@
 .name-screen {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: var(--bg-primary);
   display: flex;
@@ -137,8 +137,14 @@
   opacity: 0.35;
   cursor: not-allowed;
 }
-.ns-submit:not(:disabled):hover {
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .ns-submit:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+  }
+}
+.ns-submit:not(:disabled):active {
+  transform: scale(0.97);
   box-shadow: var(--shadow-accent);
 }
 .ns-submit-arrow { font-size: 20px; }
