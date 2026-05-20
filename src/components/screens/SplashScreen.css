@@ -42,6 +42,32 @@
   text-transform: uppercase;
 }
 
+/* Hook central pegado abajo del top bar */
+.splash-hook {
+  position: absolute;
+  top: 78px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  pointer-events: none;
+}
+.splash-hook-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+.splash-hook-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: pulse 3.5s ease-in-out infinite;
+}
+
 .splash-grid {
   position: relative;
   display: grid;
@@ -185,36 +211,105 @@
 }
 .splash-half:hover .splash-overlay { opacity: 0.78; }
 
-/* Moneda 3D — entre los dos splits */
-.splash-coin-wrap {
+/* Divider — bifurcación de decisiones */
+.splash-divider {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  width: 280px;
-  height: 280px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   pointer-events: none;
-  filter: drop-shadow(0 0 40px rgba(0, 212, 170, 0.4))
-          drop-shadow(0 0 60px rgba(212, 135, 42, 0.35));
 }
 
-.splash-coin {
-  width: 100%; height: 100%;
+.splash-divider-line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.32) 40%,
+    rgba(255, 255, 255, 0.32) 60%,
+    transparent 100%
+  );
+  transition: background 0.5s var(--ease-out);
 }
 
-/* Fallback VS si el 3D no carga */
-.splash-vs-inner {
-  width: 88px; height: 88px;
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex; align-items: center; justify-content: center;
+.splash-divider[data-side='cafe'] .splash-divider-line {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(212, 135, 42, 0.7) 40%,
+    rgba(212, 135, 42, 0.7) 60%,
+    transparent 100%
+  );
+}
+.splash-divider[data-side='tech'] .splash-divider-line {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 212, 170, 0.7) 40%,
+    rgba(0, 212, 170, 0.7) 60%,
+    transparent 100%
+  );
+}
+
+/* Diamante central */
+.splash-divider-diamond {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  transform: rotate(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   background: #000;
-  color: #fff;
-  font-family: var(--font-display);
-  font-weight: 900;
-  letter-spacing: -0.025em;
-  font-size: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.5s var(--ease-out);
+  animation: diamondPulse 3s ease-in-out infinite;
+}
+
+.splash-divider-diamond-inner {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s var(--ease-out);
+}
+
+.splash-divider[data-side='cafe'] .splash-divider-diamond {
+  border-color: #D4872A;
+  box-shadow: 0 0 30px rgba(212, 135, 42, 0.55),
+              0 0 60px rgba(212, 135, 42, 0.3),
+              inset 0 0 20px rgba(212, 135, 42, 0.18);
+  transform: rotate(45deg) scale(1.1);
+}
+.splash-divider[data-side='cafe'] .splash-divider-diamond-inner {
+  background: #D4872A;
+  box-shadow: 0 0 12px #D4872A;
+}
+
+.splash-divider[data-side='tech'] .splash-divider-diamond {
+  border-color: #00D4AA;
+  box-shadow: 0 0 30px rgba(0, 212, 170, 0.55),
+              0 0 60px rgba(0, 212, 170, 0.3),
+              inset 0 0 20px rgba(0, 212, 170, 0.18);
+  transform: rotate(45deg) scale(1.1);
+}
+.splash-divider[data-side='tech'] .splash-divider-diamond-inner {
+  background: #00D4AA;
+  box-shadow: 0 0 12px #00D4AA;
+}
+
+@keyframes diamondPulse {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255, 255, 255, 0.3);
+  }
 }
 
 /* Bottom */
@@ -266,8 +361,34 @@
   .splash-content { padding: 30px 24px; justify-content: flex-end; }
   .splash-title { font-size: clamp(42px, 11vw, 80px); }
   .splash-desc { font-size: 14px; }
-  .splash-coin-wrap { width: 180px; height: 180px; }
+  .splash-divider {
+    height: auto;
+    width: 60vw;
+    flex-direction: row;
+    top: 50%;
+  }
+  .splash-divider-line {
+    height: 1px;
+    width: auto;
+    flex: 1;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.32) 40%,
+      rgba(255, 255, 255, 0.32) 60%,
+      transparent 100%
+    );
+  }
+  .splash-divider[data-side='cafe'] .splash-divider-line,
+  .splash-divider[data-side='tech'] .splash-divider-line {
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+  }
+  .splash-divider-diamond { width: 48px; height: 48px; margin: 0 8px; }
+  .splash-divider-diamond-inner { width: 10px; height: 10px; }
   .splash-top { padding: 14px 16px; }
   .splash-meta { display: none; }
+  .splash-hook { top: 56px; }
+  .splash-hook-line { width: 30px; }
+  .splash-hook-text { font-size: 10px; letter-spacing: 0.2em; }
   .splash-foot-link { font-size: 9px; letter-spacing: 0.16em; }
 }

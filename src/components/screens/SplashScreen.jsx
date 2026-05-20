@@ -1,7 +1,5 @@
-import { useEffect, useState, Suspense, lazy } from 'react';
+import { useEffect, useState } from 'react';
 import './SplashScreen.css';
-
-const SplashCoin = lazy(() => import('../../three/SplashCoin'));
 
 export default function SplashScreen({ onSelectMode, onOpenInstitutions }) {
   const [hovered, setHovered] = useState(null);
@@ -17,9 +15,15 @@ export default function SplashScreen({ onSelectMode, onOpenInstitutions }) {
       <div className="splash-top">
         <div className="splash-brand">
           <span className="splash-brand-mark">◆</span>
-          <span className="splash-brand-name">BRANEX · ESUMER</span>
+          <span className="splash-brand-name">UNIVERSIDAD ESUMER · COMPETITIVIDAD SISTÉMICA</span>
         </div>
-        <div className="splash-meta">CEO DECISIONS · COMPETITIVIDAD SISTÉMICA</div>
+        <div className="splash-meta">CEO DECISIONS · DEMUESTRA TU CRITERIO</div>
+      </div>
+
+      <div className="splash-hook">
+        <span className="splash-hook-line" />
+        <span className="splash-hook-text">DEMUESTRA QUE ERES UN GRAN CEO</span>
+        <span className="splash-hook-line" />
       </div>
 
       <div className="splash-grid">
@@ -52,11 +56,13 @@ export default function SplashScreen({ onSelectMode, onOpenInstitutions }) {
           </div>
         </button>
 
-        {/* Moneda 3D — café/tech */}
-        <div className="splash-coin-wrap">
-          <Suspense fallback={<div className="splash-vs-inner">VS</div>}>
-            <SplashCoin hovered={!!hovered} />
-          </Suspense>
+        {/* Divider minimalista — bifurcación de decisiones */}
+        <div className="splash-divider" data-side={hovered || 'idle'}>
+          <span className="splash-divider-line splash-divider-line-top" />
+          <span className="splash-divider-diamond">
+            <span className="splash-divider-diamond-inner" />
+          </span>
+          <span className="splash-divider-line splash-divider-line-bot" />
         </div>
 
         {/* TECH */}

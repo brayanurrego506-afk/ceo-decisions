@@ -37,6 +37,47 @@ function getEnding(mode, m) {
   return ENDINGS.tech.bankrupt;
 }
 
+// Calificación 0.0 a 5.0 con decimales
+// Compuesta por:
+//   - 3.2 pts máx: métricas finales (capital + competitividad + reputacion)
+//   - 0.6 pts máx: mercados internacionales abiertos (0.15 por cada uno, max 4)
+//   - 1.2 pts máx: decisiones óptimas elegidas (0.24 por cada óptima de 5)
+function calculateScore(mode, history, metrics, decisions) {
+  // Métricas: cada métrica va de 0 a 100. Normalizamos.
+  const baseMax = mode === 'cafe' ? 75 : 70; // ajuste por dificultad inicial
+  const metricsPart = Math.min(
+    3.2,
+    ((metrics.capital + metrics.competitividad + metrics.reputacion) / (3 * baseMax)) * 3.2,
+  );
+
+  const marketsPart = Math.min(0.6, metrics.mercados * 0.15);
+
+  // Contar decisiones óptimas
+  const optimalCount = history.reduce((acc, h) => {
+    const decision = decisions[h.step];
+    if (decision && decision.bestOption === h.choice) return acc + 1;
+    return acc;
+  }, 0);
+  const optimalPart = optimalCount * 0.24;
+
+  const total = metricsPart + marketsPart + optimalPart;
+  const score = Math.max(0, Math.min(5, total));
+
+  let rank;
+  if (score >= 4.5) rank = 'CEO LEGENDARIO';
+  else if (score >= 3.8) rank = 'CEO ESTRATÉGICO';
+  else if (score >= 3.0) rank = 'CEO EN CRECIMIENTO';
+  else if (score >= 2.0) rank = 'CEO EN APRENDIZAJE';
+  else rank = 'NECESITA EL ECOSISTEMA';
+
+  return {
+    score: Math.round(score * 10) / 10,
+    rank,
+    optimalCount,
+    totalDecisions: history.length,
+  };
+}
+
 function applyFx(metrics, fx, mode) {
   return {
     capital: clamp(metrics.capital + fx.capital),
@@ -90,7 +131,8 @@ function reducer(state, action) {
       const nextStep = state.step + 1;
       if (nextStep >= decisions.length) {
         const ending = getEnding(state.mode, state.metrics);
-        return { ...state, screen: 'ending', ending };
+        const scoreData = calculateScore(state.mode, state.history, state.metrics, decisions);
+        return { ...state, screen: 'ending', ending, scoreData };
       }
       return {
         ...state,

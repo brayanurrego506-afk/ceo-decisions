@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
+import ScoreReveal from '../ui/ScoreReveal';
 import './EndingScreen.css';
 
 function useGlitch(active) {
@@ -17,7 +18,7 @@ function useGlitch(active) {
   return glitched;
 }
 
-export default function EndingScreen({ ending, mode, ceoName, metrics, onRestart, onLearnMore }) {
+export default function EndingScreen({ ending, mode, ceoName, metrics, scoreData, onRestart, onLearnMore }) {
   const confettiRef = useRef();
   const isEpic = ending.tier === 'EPIC';
   const isDanger = ending.tier === 'DANGER';
@@ -75,6 +76,8 @@ export default function EndingScreen({ ending, mode, ceoName, metrics, onRestart
         <div className="es-subtitle">{ending.subtitle}</div>
 
         <div className="es-headline">{ending.headline}</div>
+
+        {scoreData && <ScoreReveal scoreData={scoreData} />}
 
         <p className="es-text">{ending.text}</p>
 

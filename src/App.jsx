@@ -144,6 +144,7 @@ export default function App() {
             mode={state.mode}
             ceoName={state.ceoName}
             metrics={state.metrics}
+            scoreData={state.scoreData}
             onRestart={() => {
               stopMusic();
               actions.restart();

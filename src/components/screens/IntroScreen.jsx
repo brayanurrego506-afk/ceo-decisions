@@ -59,6 +59,11 @@ export default function IntroScreen({ mode, ceoName, metrics, onStart }) {
           <span className="is-meta-name">{ceoName}</span>
         </div>
 
+        <div className="is-prompt">
+          <span className="is-prompt-bar" />
+          <span className="is-prompt-text">DEMUESTRA QUE ERES UN GRAN CEO</span>
+        </div>
+
         <h1 className="is-greeting">
           BIENVENIDO, <br /> <span className="is-greeting-accent">{ceoName}</span>
         </h1>
