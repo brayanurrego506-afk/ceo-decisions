@@ -1,0 +1,46 @@
+.ticker {
+  position: relative;
+  z-index: var(--z-ticker);
+  height: 32px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+.ticker[data-mode='cafe'] {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+.ticker[data-mode='tech'] {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scrollLeft 60s linear infinite;
+}
+
+.ticker-item {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticker-bullet {
+  font-size: 8px;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .ticker { height: 28px; }
+  .ticker-item { font-size: 10px; padding: 0 18px; }
+}

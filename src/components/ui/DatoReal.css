@@ -1,0 +1,54 @@
+.dato-real {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.dr-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.dr-icon {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.dr-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.dr-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.dr-source {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .dato-real { padding: 14px 16px; margin: 18px 0; }
+  .dr-text { font-size: 13px; }
+}

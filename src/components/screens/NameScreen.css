@@ -1,0 +1,151 @@
+.name-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.7s var(--ease-out);
+}
+
+.ns-bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.32) saturate(0.85);
+  transform: scale(1.05);
+  animation: nsFloat 18s ease-in-out infinite;
+}
+
+@keyframes nsFloat {
+  0%, 100% { transform: scale(1.05) translate(0, 0); }
+  50%      { transform: scale(1.08) translate(-1%, -1%); }
+}
+
+.ns-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+    radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%);
+}
+
+.ns-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  width: 100%;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.ns-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.ns-title {
+  font-family: var(--font-display);
+  font-size: clamp(46px, 7vw, 110px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 22px;
+}
+
+.ns-desc {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 540px;
+  margin: 0 auto 38px auto;
+}
+
+.ns-input-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 32px auto;
+}
+
+.ns-input {
+  width: 100%;
+  padding: 16px 4px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  outline: none;
+}
+
+.ns-input::placeholder {
+  color: var(--text-faint);
+  font-family: var(--font-display-alt);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+.ns-underline {
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.5s var(--ease-out);
+  box-shadow: 0 0 12px var(--accent);
+}
+.ns-input:focus + .ns-underline { width: 100%; }
+
+.ns-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 36px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: 0;
+  border-radius: 0;
+  font-family: var(--font-display-alt);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  margin-bottom: 16px;
+}
+.ns-submit:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.ns-submit:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+.ns-submit-arrow { font-size: 20px; }
+
+.ns-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .ns-content { padding: 24px 16px; }
+  .ns-desc { font-size: 13px; margin-bottom: 24px; }
+}

@@ -1,0 +1,194 @@
+.decision-screen {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  min-height: 0;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+.decision-screen.show { opacity: 1; }
+
+/* IMG SIDE */
+.ds-img-side {
+  position: relative;
+  overflow: hidden;
+}
+.ds-img {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.78);
+  transform: scale(1.03);
+  transition: transform 12s linear;
+}
+.decision-screen.show .ds-img { transform: scale(1.1); }
+
+.ds-img-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,0.25) 0%,
+      rgba(0,0,0,0.45) 60%,
+      var(--bg-primary) 100%);
+}
+
+.ds-chapter-tag {
+  position: absolute;
+  top: 28px; left: 28px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.ds-progress {
+  position: absolute;
+  bottom: 32px; left: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ds-progress-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.ds-progress-dots { display: flex; gap: 8px; }
+.ds-dot {
+  width: 24px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.18);
+  transition: all 0.4s var(--ease-out);
+}
+.ds-dot[data-state='done'] {
+  background: var(--accent);
+  opacity: 0.55;
+}
+.ds-dot[data-state='active'] {
+  background: var(--accent);
+  width: 36px;
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.ds-progress-count {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 4px;
+}
+.ds-progress-num {
+  font-size: 56px;
+  color: var(--text);
+}
+.ds-progress-sep {
+  font-size: 28px;
+  color: var(--text-faint);
+}
+.ds-progress-total {
+  font-size: 28px;
+  color: var(--text-muted);
+}
+
+/* CONTENT */
+.ds-content {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.ds-scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding: 50px 60px 50px 50px;
+}
+
+.ds-chapter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ds-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 70px);
+  line-height: 0.92;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 26px;
+}
+
+.ds-narrative {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  max-width: 620px;
+}
+.ds-narrative strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ds-question {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--accent);
+  margin-bottom: 28px;
+}
+.ds-question-mark {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+}
+.ds-question-text {
+  font-family: var(--font-display-alt);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.35;
+  padding-top: 4px;
+}
+
+.ds-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .decision-screen { grid-template-columns: 1fr; grid-template-rows: 30vh 1fr; }
+  .ds-img-overlay {
+    background: linear-gradient(180deg, transparent 0%, transparent 50%, var(--bg-primary) 100%);
+  }
+  .ds-scroll { padding: 24px 18px; }
+  .ds-progress { bottom: 14px; left: 14px; }
+  .ds-chapter-tag { top: 12px; left: 12px; font-size: 9px; }
+  .ds-progress-num { font-size: 36px; }
+  .ds-progress-sep, .ds-progress-total { font-size: 20px; }
+  .ds-narrative { font-size: 13px; }
+}
